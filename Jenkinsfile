@@ -1,5 +1,4 @@
 pipeline {
-    checkout scm
     agent { label 'smartos' }
 
     stages {
