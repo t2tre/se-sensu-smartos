@@ -9,7 +9,8 @@ BIN_MKDIR=/usr/bin/mkdir
 BIN_BUNDLER=/opt/local/bin/bundler
 BIN_CP=/usr/bin/cp
 
-cp -Rp app/* ${HOME}/app/.
+${BIN_CP} -Rp app/* ${HOME}/app/.
+${BIN_CP} -Rp sensu ${HOME}/etc/.
 cd ${HOME}/app
 
 ${BIN_BUNDLER} install --path vendor/bundler
