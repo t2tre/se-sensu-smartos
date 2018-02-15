@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'smartos' }
+    environment {
+        PATH = '/opt/local/java/openjdk8/bin:/opt/local/bin:/opt/local/sbin:/ec/bin:/ec/sbin:/usr/bin:/usr/sbin:/usr/ccs/bin'
+    }
 
     stages {
         stage('Build') {
