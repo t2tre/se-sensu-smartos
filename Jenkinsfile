@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "echo Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                sh "echo Starting build ${env.BUILD_ID}"
                 sh '/usr/bin/bash buildscripts/clean.sh'
             }
         }
