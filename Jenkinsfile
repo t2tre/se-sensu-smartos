@@ -23,7 +23,8 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                sh "echo Adding build ${env.BUILD_ID} to artifactory"
+                sh '/usr/bin/bash buildscripts/deploy_artefact.sh'
             }
         }
     }
