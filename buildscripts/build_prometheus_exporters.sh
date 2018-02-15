@@ -12,9 +12,11 @@ BIN_CHMOD=/usr/bin/chmod
 
 export PATH=${HOME}/go/bin:${HOME}/app/bin:${HOME}/app/sbin:/opt/local/sbin:/opt/local/bin:$PATH
 
-${BIN_GO} get github.com/oliver006/redis_exporter
-${BIN_GO} build github.com/oliver006/redis_exporter
-${BIN_GO} install github.com/oliver006/redis_exporter
+for exporter in `${BIN_CAT} buildscripts/prometheus_exporters`; do
+   ${BIN_GO} get ${exporter}
+   ${BIN_GO} build ${exporter}
+   ${BIN_GO} install ${exporter}
+done
 
 ${BIN_CP} ${HOME}/go/bin/* ${HOME}/app/bin/prometheus/.
 ${BIN_CHMOD} 0755 ${HOME}/app/bin/prometheus/*
