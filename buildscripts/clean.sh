@@ -7,7 +7,7 @@ umask 022
 BIN_RM=/usr/bin/rm
 BIN_MKDIR=/usr/bin/mkdir
 
-FOLDER_LIST="log run etc app app/bin app/sbin app/vendor"
+FOLDER_LIST="log run etc app app/bin app/bin/prometheus app/sbin app/vendor"
 
 echo "Resetting build folders..."
 for folder in ${FOLDER_LIST}; do
