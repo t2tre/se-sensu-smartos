@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'buildscripts/clean.sh'
+                sh '/usr/bin/bash buildscripts/clean.sh'
             }
         }
         stage('Test') {
