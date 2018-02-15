@@ -15,6 +15,10 @@ package_file_name=sensu-`${BIN_UNAME} -s`-`${BIN_UNAME} -r`.tgz
 
 cd ${HOME}
 
+# Set perms for some files before packaging
+${BIN_CHMOD} 0755 app/init/* app/sbin/*
+${BIN_CHMOD} 0644 app/init/sensu_client_template.xml
+
 ${BIN_MKDIR} -p target
 ${BIN_ECHO} ${BUILD_ID} > BUILD_NUMBER.txt
 ${BIN_TAR} cpzf target/${package_file_name} app etc log run BUILD_NUMBER.txt
