@@ -12,6 +12,7 @@ pipeline {
                 sh '/usr/bin/bash buildscripts/clean.sh'
                 sh '/usr/bin/bash buildscripts/build_sensu.sh'
                 sh '/usr/bin/bash buildscripts/build_prometheus_exporters.sh'
+                sh '/usr/bin/bash buildscripts/package_artefact.sh'
             }
         }
         stage('Test') {

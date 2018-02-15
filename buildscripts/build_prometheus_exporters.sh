@@ -9,6 +9,7 @@ BIN_MKDIR=/usr/bin/mkdir
 BIN_GO=/opt/local/bin/go
 BIN_CP=/usr/bin/cp
 BIN_CHMOD=/usr/bin/chmod
+BIN_CAT=/usr/bin/cat
 
 export PATH=${HOME}/go/bin:${HOME}/app/bin:${HOME}/app/sbin:/opt/local/sbin:/opt/local/bin:$PATH
 
