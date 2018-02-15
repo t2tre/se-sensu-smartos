@@ -24,7 +24,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh "echo Adding build ${env.BUILD_ID} to artifactory"
-                sh '/usr/bin/bash buildscripts/deploy_artefact.sh'
+                withCredentials([string(credentialsId: 'JENKINS_ARTIFACTORY_API_KEY', variable: 'APIKEY')]) {
+                    sh '/usr/bin/bash buildscripts/deploy_artefact.sh'
+                }
             }
         }
     }
