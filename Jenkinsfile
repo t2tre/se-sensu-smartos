@@ -8,7 +8,8 @@ pipeline {
         stage('Build') {
             steps {
                 sh "echo Starting build ${env.BUILD_ID}"
-                sh '/usr/bin/bash -x buildscripts/clean.sh'
+                sh '/usr/bin/bash buildscripts/clean.sh'
+                sh '/usr/bin/bash buildscripts/build_sensu.sh'
             }
         }
         stage('Test') {
