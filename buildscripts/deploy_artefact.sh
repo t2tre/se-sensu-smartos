@@ -13,4 +13,5 @@ deployment_url="${ARTIFACTORY_URL}/sensu/BUILD_${BUILD_ID}/${package_file_name}"
 cd ${HOME}
 
 echo "${BIN_CURL} -H \"X-JFrog-Art-Api: ${APIKEY}\" -T target/${package_file_name} ${deployment_url}"
+${BIN_CURL} -H \"X-JFrog-Art-Api: ${APIKEY}\" -T target/${package_file_name} ${deployment_url}
 
