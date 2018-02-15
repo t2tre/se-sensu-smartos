@@ -17,7 +17,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                sh "echo Checking TAR artefact for build ${env.BUILD_ID}"
+                sh '/usr/bin/bash buildscripts/test_artefact.sh'
             }
         }
         stage('Deploy') {
